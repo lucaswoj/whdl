@@ -2,16 +2,16 @@ package org.whdl.frontend;
 
 class Scope {
   Map<NamespaceIdentifier, Namespace> namespaces;
-  Map<VariableIdentifier, Value> variables;
+  Map<VariableIdentifier, Variable> variables;
 
-  void addVariable(VariableIdentifier, Value);
+  void addVariable(VariableIdentifier, Variable);
   void addNamespace(NamespaceIdentifier, Namespace);
 
-  Map<VariableIdentifier, Value> getVariables() {
+  Map<VariableIdentifier, Variable> getVariables() {
     return java.util.Collections.unmodifiableMap(variables)
   }
 
-  Value getVariable(VariableIdentifier identifier) {
+  Variable getVariable(VariableIdentifier identifier) {
     return variables.get(identifier);
   }
 }
