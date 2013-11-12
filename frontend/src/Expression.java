@@ -2,13 +2,18 @@ package org.whdl.frontend;
 
 abstract class Expression {
   private SourceLocation sourceLocation;
+  private Scope scope;
 
-  public Expression(SourceLocation sourceLocation) {
+  public Expression(SourceLocation sourceLocation, Scope scope) {
     this.sourceLocation = sourceLocation;
   }
 
   public SourceLocation getSourceLocation() {
     return sourceLocation;
+  }
+
+  public Scope getScope() {
+    return scope;
   }
 
   public abstract VariableIdentifier getOutputTypeIdentifier();
@@ -32,5 +37,5 @@ abstract class Expression {
   public abstract Value getSingleCompiletimeKnowableValue();
 
   // Collapse compiletime knowable values into a literal.
-  public abstract Expression collapseCompliletimeKnowable();
+  public abstract Expression collapseCompliletimeKnowableValue();
 }

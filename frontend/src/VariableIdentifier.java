@@ -3,7 +3,7 @@ package org.whdl.frontend;
 class VariableIdentifier {
 
   private String name;
-  private String NamespaceIdentifier namespaceIdentifier;
+  private NamespaceIdentifier namespaceIdentifier;
 
   public VariableIdentifier(NamespaceIdentifier namespaceIdentifier, String name) {
     this.name = name;
@@ -16,5 +16,9 @@ class VariableIdentifier {
 
   public NamespaceIdentifier getNamespaceIdentifier() {
     return namespaceIdentifier;
+  }
+
+  public Boolean hasNamespaceIdentifier() {
+    return namespaceIdentifier == null || namespaceIdentifier.isEmpty();
   }
 }

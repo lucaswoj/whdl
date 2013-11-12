@@ -6,18 +6,18 @@ class File {
     Enum Type = {whitelist, blacklist};
     Type type;
     NamespaceIdentifier namespace;
-    Set<VariableIdentifier, String> variables;
+    Set<VaribleIdentifier, String> list;
   }
 
   public class NamespaceExport {
-    Map<VaribleIdentifier, String> variables;
+    Map<VaribleIdentifier, String> list;
   }
 
   private String filepath;
   private String source;
   private NamespaceIdentifier namespaceIdentifier;
   private Set<Statement> statements;
-  private Scope scope;
+  private FileScope scope;
   private NamespaceExport namespaceExports;
   private ArrayList<NamespaceImport> namespaceImports;
 
@@ -47,7 +47,7 @@ class File {
     return namespaceIdentifier;
   }
 
-  public Scope getScope() {
+  public FileScope getScope() {
     return scope;
   }
 
